@@ -5,6 +5,8 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -13,10 +15,17 @@
            http://www.springframework.org/schema/mvc
            http://www.springframework.org/schema/mvc/spring-mvc.xsd
            http://www.springframework.org/schema/tx
-           http://www.springframework.org/schema/tx/spring-tx.xsd">
+           http://www.springframework.org/schema/tx/spring-tx.xsd
+            http://www.springframework.org/schema/data/jpa
+            http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <!-- Activation des annotations Spring -->
     <context:component-scan base-package="assurance.contrat"/>
+
+
+    <!-- Enable Spring Data JPA repositories -->
+    <jpa:repositories base-package="assurance.contrat.repository" />
+
 
     <!-- Activation des fonctionnalités Spring MVC -->
     <mvc:annotation-driven/>
@@ -44,7 +53,6 @@
 
     <!-- Document handling -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
-
 
     <!-- Activation de la gestion des transactions par annotations -->
     <tx:annotation-driven transaction-manager="transactionManager"/>

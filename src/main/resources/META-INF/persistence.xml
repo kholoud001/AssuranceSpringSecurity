@@ -8,11 +8,15 @@
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
+            <property name="hibernate.validator.autoregister_listeners" value="true"/>
+
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/assurance"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/AssuranceSecurity"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
             <property name="jakarta.persistence.jdbc.password" value="action"/>
-            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.show_sql" value="true"/>
         </properties>
